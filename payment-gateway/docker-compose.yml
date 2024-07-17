@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/payment-gateway
+  mongo:
+    image: mongo:4.2
+    ports:
+      - "27017:27017"
